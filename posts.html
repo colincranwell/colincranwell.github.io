@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Posts</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .accordion {
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .accordion-button {
+            background-color: #ccc;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        
+        .accordion-button:hover {
+            background-color: #ddd;
+        }
+        
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,27 +52,64 @@
         <section>
             <h2>My Assignments</h2>
             <article>
-                <h3>Project 1 Rough Draft</h3>
-                <p><strong>Introduction to the Dataset</strong><br>
-                The dataset I’m using utilizes registered vehicle data in Washington state to identify what vehicles are currently registered. This includes useful data such as the model, the year, the vehicle type such as hybrid or full battery, and the range. There are 17 columns worth of features with at least 11,000 rows worth of unique data.</p>
-                
-                <p><strong>Questions</strong><br>
-                Some of the questions I’d like to answer include the correlation between vehicle models and their electric range. Some manufacturers are just entering the EV space and I feel that some aren’t taking advantage of the form-factor that they provide when it comes to battery space, and will likely have lower range as a result. I’d like to test whether or not this is true. I also want to take a look at popularity trends and see which make/models are the most popular. Are people sticking to brand loyalty from their gas-powered alternatives? Or are they looking at different manufacturers with more experience in the EV space? Lastly I want to see where in the state these vehicles are the most popular. While this only covers Washington state, it could still prove to be helpful data to see if EVs are more popular in populated cities or if they are more spaced out. This could help with understanding the trends for other states and if people take these sorts of things into account when they are purchasing an EV.</p>
-                
-                <p><strong>Pre-Processing Data</strong><br>
-                During the Pre-Processing step, I ran into a few parts of the dataset that I wanted to avoid using for the final visualizations. The first step I took was to remove any null values that were included in the data, or rather any rows of data that contained null values. I opted to outright remove these rows as this is a dataset containing over 100,000 rows, and the amount of null values were only in the low hundreds. At this point, I also went ahead and dropped some of the columns that were not providing useful data that I wanted to analyze. These included things like very specific vehicle locations, legislation data, census tract, etc. After this, I realized that some of the data may not be very accurate, and searched to see if there were duplicates in the data. Since this was vehicle data, the VIN number for each registered vehicle had to be different so I was able to remove duplicates by identifying which VINs were repeating. This narrowed down the results to be around 11,000 or so cars registered, which was much more manageable.</p>
-                
-                <p><strong>Visualization #1: Line Plot measuring EV Range over the years</strong><br>
-                The first visualization lets us see that while the range that an EV can provide has been steadily increasing over the years, it has also already seen a peak in the year 2020. Tesla has been at the forefront of the EV market for years, so it is not a huge surprise to see them reaching the top of the chart in just about every year. What is surprising is to see how other EVs are progressing steadily towards the same range, and that these vehicles are popular enough to be on these charts. Another to keep in mind while looking at these charts is that Hybrid vehicles are also included, and the mileage information they provide is referring to their electric range. So another good trend to see here is that even though some of these vehicles appear to be on the low end of range, they have been steadily improving and having more range, likely in that Hybrid form factor. This could mean that we’re seeing more electrically running cars on daily commuters that aren’t even touching the gas tank, as they don’t require that much range to get to work and back to recharge overnight and do it all again in the morning. These are all very nice trends to be seeing here.</p>
-                
-                <p><strong>Line Chart</strong><br>
-                <img src="Project 1 Files/Visualization_1.png" alt="Line Plot measuring EV Range over the years" style="max-width: 100%; height: auto;">
-                </p>
+                <button class="accordion-button">Project 1</button>
+                <div class="accordion-content">
+                    <p><strong>Introduction to the Dataset</strong><br>
+                    The dataset I’m using utilizes registered vehicle data in Washington state to identify what vehicles are currently registered. This includes useful data such as the model, the year, the vehicle type such as hybrid or full battery, and the range. There are 17 columns worth of features with at least 11,000 rows worth of unique data.</p>
+                    
+                    <p><strong>Questions</strong><br>
+                    Some of the questions I’d like to answer include the correlation between vehicle models and their electric range. Some manufacturers are just entering the EV space and I feel that some aren’t taking advantage of the form-factor that they provide when it comes to battery space, and will likely have lower range as a result. I’d like to test whether or not this is true. I also want to take a look at popularity trends and see which make/models are the most popular. Are people sticking to brand loyalty from their gas-powered alternatives? Or are they looking at different manufacturers with more experience in the EV space? Lastly I want to see where in the state these vehicles are the most popular. While this only covers Washington state, it could still prove to be helpful data to see if EVs are more popular in populated cities or if they are more spaced out. This could help with understanding the trends for other states and if people take these sorts of things into account when they are purchasing an EV.</p>
+                    
+                    <p><strong>Pre-Processing Data</strong><br>
+                    During the Pre-Processing step, I ran into a few parts of the dataset that I wanted to avoid using for the final visualizations. The first step I took was to remove any null values that were included in the data, or rather any rows of data that contained null values. I opted to outright remove these rows as this is a dataset containing over 100,000 rows, and the amount of null values were only in the low hundreds. At this point, I also went ahead and dropped some of the columns that were not providing useful data that I wanted to analyze. These included things like very specific vehicle locations, legislation data, census tract, etc. After this, I realized that some of the data may not be very accurate, and searched to see if there were duplicates in the data. Since this was vehicle data, the VIN number for each registered vehicle had to be different so I was able to remove duplicates by identifying which VINs were repeating. This narrowed down the results to be around 11,000 or so cars registered, which was much more manageable.</p>
+                    
+                    <p><strong>Visualization #1: Line Plot measuring EV Range over the years</strong><br>
+                    The first visualization lets us see that while the range that an EV can provide has been steadily increasing over the years, it has also already seen a peak in the year 2020. Tesla has been at the forefront of the EV market for years, so it is not a huge surprise to see them reaching the top of the chart in just about every year. What is surprising is to see how other EVs are progressing steadily towards the same range, and that these vehicles are popular enough to be on these charts. Since the charts are separated into Electric and Hybrid vehicles, it's important to view each independently. For Hybrid vehicles, the mileage data specifically reflects their electric range. While some Hybrid vehicles may show lower electric ranges compared to full Electric vehicles, there is still a clear upward trend in improvement over time. This suggests that more commuters are relying solely on the electric capabilities of their Hybrids for daily travel, without needing to use gasoline. Meanwhile, the chart for Electric vehicles highlights the broader progress in electric range, further reinforcing the shift towards fully electric commuting solutions. Both charts reveal promising trends in the increased reliance on electric driving.</p>
+                    
+                    <p><strong>Line Chart (Electric Only)</strong><br>
+                    <img src="Project 1 Files/ev_line_chart.png" alt="Line Plot measuring EV Range over the years" style="max-width: 100%; height: auto;">
+                    </p>
+
+                    <p><strong>Line Chart (Hybrid Only)</strong><br>
+                    <img src="Project 1 Files/hybrid_line_chart.png" alt="Line Plot measuring Hybrid Range over the years" style="max-width: 100%; height: auto;">
+                    </p>
+
+                    <p><strong>Visualization #2: Bar Charts measuring EV Make Popularity</strong><br>
+                    The second visualization shows us that when it comes to strictly electric vehicles, people seem to favor Tesla over just about any other brand, with around twice as many Teslas on the roads compared to the next leading brand. Even when we take hybrids into account, the most popular hybrids are made by Volvo and manage to not be as popular as Teslas either. Taking Tesla out of the picture, the most popular brands are the ones we have seen for decades, such as Ford, Kia, Chevrolet, etc. So while brand loyalty is still very much a major factor for people when it comes to purchasing an EV, it is not always the case as shown by the overall success of Tesla in this space.</p>
+                    
+                    <p><strong>Bar Chart (Electric Only)</strong><br>
+                    <img src="Project 1 Files/ev_bar_chart.png" alt="Bar Chart measuring Electric Vehicle Make Popularity" style="max-width: 100%; height: auto;">
+                    </p>
+
+                    <p><strong>Bar Chart (Hybrid Only)</strong><br>
+                    <img src="Project 1 Files/hybrid_bar_chart.png" alt="Bar Chart measuring Hybrid Vehicle Make Popularity" style="max-width: 100%; height: auto;">
+                    </p>
+
+                    <p><strong>Visualization #3: Bar Charts measuring Zip Code popularity</strong><br>
+                    The third and final visualization looks at how popular EVs are in cities to get an idea on if EVs are more popular in city areas compared to other areas. In order to make the data at least legible, I’ve removed any cities where occurrences of EVs were less than 50. This way, we are still able to view the most popular areas and gauge how popular they are in city areas. And unsurprisingly, the majority of EVs are found in Seattle, a highly populated city, with the other highly ranking areas also being popular city areas. This shows us that these city areas have a set of the population that are taking advantage of EVs for getting around the cities, especially the hybrids which have a lower electric range, but don’t require too much to get around the city almost entirely on that electric range.</p>
+                    
+                    <p><strong>Bar Chart</strong><br>
+                    <img src="Project 1 Files/city_popularity_chart.png" alt="Bar Chart measuring City EV Popularity" style="max-width: 100%; height: auto;">
+                    </p>
+                </div>
             </article>
         </section>
     </main>
     <footer>
         <p></p>
     </footer>
+    <script>
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

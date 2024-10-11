@@ -101,6 +101,60 @@
                     
                 </div>
             </article>
+            <article>
+    <button class="accordion-button">Project 2</button>
+    <div class="accordion-content">
+        <p><strong>Introduction to the Dataset</strong><br>
+        The dataset I’m using this time explores video game information and statistics, which includes details about games such as the genre, platform, sales, developers, and more. There are 16 columns worth of data and a little over 16,000 unique entries for games.</p>
+
+        <p><strong>Questions</strong><br>
+        The primary question I’m out to answer is what correlates to the success of a video game? Can we simply look at the genre of video game and know that it’s likely to be successful? What about other factors like the platform it released on, or if a developer has reached such a success point that they can release any sort of game and it will do well because the customer has faith in them? These are the sorts of questions I’m looking to answer as someone highly interested in both the video game market as well as just enjoying video games in general.</p>
+
+        <p><strong>Pre-Processing Data</strong><br>
+        During my pre-processing step, I found that certain rows of data weren’t as usable as others, as nearly half of them did not have data entries for things like critic score or rating. However, there were other factors in these entries that were still very usable so I didn’t want to outright remove these rows. So I ended up filling a lot of these entries with the mean/median value of their specific columns so that I could still use these rows. Some other null values I ended up filling with “Unknown” values as they were string values and I did not have any way of filling these otherwise. Speaking of which, I also ended up making copies of some of the columns and converted the originals from string values to int values to make it easier for training data later. After this, I found a way to come up with a “Success” metric based on the global sales values that I had to better visualize data later. At this point, I considered the pre-processing done and ready for further steps.</p>
+
+        <p><strong>Visualization #1</strong><br>
+        The first visualization I made looks at the success rate by platform, which we can see that the highest success rates were found on older consoles such as the Nintendo Entertainment System, the Gameboy, and the Sega Genesis. The least successful consoles are forgotten ones that tried competing with these older consoles, showing that the success of these consoles outpaced the other ones so much that the competition completely paled in comparison.</p>
+        
+        <p><strong>Bar Chart on Platforms</strong><br>
+        <img src="Project 2 Files/bar_chart_platforms.png" alt="Bar Chart on Platforms" style="max-width: 100%; height: auto;">
+        </p>
+
+        <p><strong>Visualization #2</strong><br>
+        The second visualization takes a look at the success rate by genre. Ignoring the unknown genre as this was done for filler purposes, the other genres that were most successful were shooters and platformers. We can speculate that the platformers' success rate is thanks to the Mario Bros and Sonic series based on the platform success we saw previously, and that the shooters' success rate is thanks to franchises like Call of Duty as those games have taken over a large portion of the market in the modern day. While these two genres definitely have a lead over the others, it is interesting to see that other genres follow so closely behind, outside of adventure and strategy games which is rather surprising to me that the adventure genre fell so short compared to the others.</p>
+
+        <p><strong>Bar Chart on Genres</strong><br>
+        <img src="Project 2 Files/bar_chart_genres.png" alt="Bar Chart on Genres" style="max-width: 100%; height: auto;">
+        </p>
+
+        <p><strong>Confusion Matrix</strong><br>
+        While I feel that I could have done a better job in training the model for trying to figure out if a game is successful, when it comes to if it will be unsuccessful, it does surprisingly well. Perhaps there are other combinations that I could try in the future that could do a better job, but overall I like where it’s gone.</p>
+
+        <p><strong>Classification Report</strong><br>
+        <img src="Project 2 Files/classification_report.png" alt="Classification Report" style="max-width: 100%; height: auto;">
+        </p>
+
+        <p><strong>Confusion Matrix</strong><br>
+        <img src="Project 2 Files/confusion_matrix.png" alt="Confusion Matrix" style="max-width: 100%; height: auto;">
+        </p>
+
+        <p><strong>Heatmap</strong><br>
+        It’s interesting to see where other correlations lie as well within the video game market. While the sales section was bound to have some correlations, it’s interesting to see how the critics also factor into the mix as well, though I am disappointed to see how little correlation there is for some of the factors I had tried to find correlations for. However, I still am glad I tried despite these correlations in the heatmap.</p>
+
+        <p><strong>Heatmap</strong><br>
+        <img src="Project 2 Files/heatmap.png" alt="Heatmap" style="max-width: 100%; height: auto;">
+        </p>
+
+        <p><strong>Storytelling</strong><br>
+        I feel like after going through the visualizations and mappings, I have a better grasp on what determines a video game’s success, and that it has a lot more to do with critics than before. While older consoles have an easier go at things without much to slow them down from critics, the modern-day market struggles to get by without being reviewed well by critics before official release. In many cases, it makes or breaks a game’s success, and we can’t simply look at the type of game that’s coming out like you could back then. Still, I’m glad I looked into this and gave things a shot my way.</p>
+
+        <div class="download-links">
+            <a href="Project 2 Files/Colin_Cranwell_Project_2.html" download>Download Project 2 HTML</a>
+            <a href="Project 2 Files/Colin_Cranwell_Project_2.ipynb" download>Download Project 2 Jupyter Notebook</a>
+        </div>
+    </div>
+</article>
+
         </section>
     </main>
     <footer>

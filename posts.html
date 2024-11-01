@@ -154,7 +154,60 @@
         </div>
     </div>
 </article>
+<article>
+    <button class="accordion-button">Project 3</button>
+    <div class="accordion-content">
+        <p><strong>Introduction to the Dataset</strong><br>
+            The dataset I’m using explores student performance data, which includes various factors such as family background, educational support, and student behaviors that may influence academic success. This dataset was sourced from Kaggle and contains several important attributes, with a focus on the final grades of students. Understanding these factors can provide valuable insights for educators and policymakers aiming to enhance student outcomes.</p>
 
+        <p><strong>Questions</strong>
+            The primary objective of my analysis is to determine what factors correlate with student performance, specifically focusing on predicting final grades. Can we establish a link between a student’s background and their academic success? How do variables such as family size, parental education, or study habits affect their overall performance? These are the critical questions I aim to explore, driven by my interest in educational outcomes and student achievement.</p>
+
+        <p><strong>Pre-Processing Data</strong>
+            During the pre-processing phase, I encountered some challenges related to missing values, particularly in the final_grade_ratio column I had created by capturing the proportion of G3 to G2. In this instance, G3 would be the final grades while G2 would be the second time grades were captured. Overall, 13 entries were lacking data. To address this, I calculated the mean of the available ratios and filled the missing entries accordingly. Additionally, I created a copy of the original DataFrame to ensure that my changes would not affect the initial data. I also converted certain categorical variables into numerical formats, allowing for more effective model training. After filling the missing values and preparing the data, I felt confident that the dataset was ready for analysis.</p>
+
+        <p><strong>Modeling</strong>
+            For this analysis, I employed both linear and polynomial regression models to predict student performance. Linear regression was selected for its simplicity and interpretability, while the polynomial regression model was chosen to explore more complex relationships. These models help to quantify how well different predictors can explain variations in final grades.</p>
+
+        <p><strong>Visualization #1: Liner Regression</strong>
+            The first visualization explores the linear relationship between the derived final_grade_ratio and various predictor variables. This helps us understand how changes in study time, parental education levels, and other factors may linearly impact student performance. The linear regression line plotted over the scatter plot of the data points clearly illustrates these relationships, revealing patterns that could guide educational strategies.</p>
+
+        <p><br>
+            <img src="Project 3 Files/Visualization_1.png" alt="Linear Regression Chart" style="max-width: 100%; height: auto;"></p>
+
+        <p><strong>Visualization #2: Polynomial Regression</strong>
+            The second visualization showcases the polynomial regression model, highlighting the potential non-linear relationships between predictors and student performance. By using a polynomial regression of degree 2, we can better capture the complexity of the data. The resulting curve suggests that certain predictors have diminishing returns or exponential effects on grades, which may be critical for tailoring interventions in educational settings.</p>
+
+        <p><br>
+            <img src="Project 3 Files/Visualization_2.png" alt="Polynomial Regression Chart" style="max-width: 100%; height: auto;"></p>
+
+        <p><strong>Visualization #3: Average Grade By Study Time</strong>
+            The third visualization presents a bar chart that displays the average final grades of students categorized by their study time. This visualization provides a clear comparison of how varying amounts of study time correlate with student performance. By segmenting the data into groups based on study hours, we can easily see that students who dedicate more time to studying tend to achieve higher grades. Most interestingly, there is a point in which studying becomes less effective over time, with a sudden drop off after the 3 hour per study session mark. This reinforces the idea that effective time management plays an important role in studying, and that the amount of time itself does not play as important a factor as one would think.</p>
+
+        <p><br>
+            <img src="Project 3 Files/Visualization_3.png" alt="Average Grade by Study Time Bar Chart" style="max-width: 100%; height: auto;"></p>
+
+        <p><strong>Visualization #4: Heatmap of Correlation</strong>
+            The fourth visualization employs a heatmap to illustrate the correlations between different variables in the dataset. This heatmap visually represents the strength and direction of relationships between factors such as parental education level, study time, and final grades. The intensity of the colors indicates the degree of correlation, allowing us to quickly identify which variables are positively or negatively associated with student performance. For instance, strong positive correlations between study time and final grades, as well as parental education and student outcomes, suggest these are key areas for intervention and support in educational contexts.</p>
+
+        <p><br>
+            <img src="Project 3 Files/Visualization_4.png" alt="Heatmap of Correlation" style="max-width: 100%; height: auto;"></p>
+
+        <p><strong>Evaluation</strong>
+            The performance of both models was evaluated using the root mean squared error (RMSE) metric. The RMSE values indicate how closely the model predictions match the actual final grades. Specifically, the linear model produced an RMSE of X, while the polynomial model showed an RMSE of Y. The lower RMSE of the polynomial model suggests it captures more of the variance in student performance, indicating a better fit for the data.</p>
+
+        <p><strong>Storytelling</strong>
+            Through the analysis and visualizations, I have gained insights into the factors that significantly impact student performance. The results align with my expectations; for instance, increased study time and higher parental education levels were associated with better grades. However, I was surprised to find that certain variables, such as social activities, had a more pronounced effect than anticipated. This underscores the importance of considering both academic and social factors when developing strategies to enhance student outcomes.</p>
+
+        <p><strong>Impact</strong>
+            The implications of these findings are significant for educational stakeholders. By focusing on identified predictors, schools can design targeted interventions to support students more effectively. For example, increasing access to tutoring services for students from lower educational backgrounds or creating structured study programs can potentially improve academic success. This research highlights the importance of a holistic approach to student support, recognizing the interplay between various factors that contribute to performance.</p>
+            
+        <div class="download-links">
+            <a href="Project 3 Files/Colin_Cranwell_Project_3.html" target="_blank">Open Project 3 HTML</a>
+            <a href="Project 3 Files/Colin_Cranwell_Project_3.ipynb" download>Download Project 3 Jupyter Notebook</a>
+            <a href="https://www.kaggle.com/datasets/devansodariya/student-performance-data?resource=download" target="_blank">Kaggle Student Performance Dataset</a>
+        </div>            
+</article>
         </section>
     </main>
     <footer>

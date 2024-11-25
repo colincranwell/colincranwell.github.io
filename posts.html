@@ -208,6 +208,63 @@
             <a href="https://www.kaggle.com/datasets/devansodariya/student-performance-data?resource=download" target="_blank">Kaggle Student Performance Dataset</a>
         </div>            
 </article>
+<article>
+    <button class="accordion-button">Project 4</button>
+    <div class="accordion-content">
+        <p><strong>Introduction to the Dataset</strong><br>
+            The dataset I'm using explores various features of Spotify tracks, including attributes like energy, loudness, tempo, and danceability. This dataset, sourced from a publicly available Spotify collection, contains information about tracks from a variety of genres. The goal of this analysis is to identify distinct clusters of songs based on features like energy, tempo, and mood. By doing this, I aim to gain insights into how songs with similar characteristics can be grouped together, which could offer a better understanding of how these attributes influence music categorization.</p>
+
+        <p><strong>Questions</strong><br>
+            The primary objective of my analysis is to explore whether I can group songs based on their audio features. Can I identify distinct musical styles or mood categories from the attributes of Spotify tracks? How do attributes like energy, tempo, and loudness influence the clustering of these tracks? These are the critical questions that guided my analysis, and I aimed to understand how different features can inform the categorization of songs.</p>
+
+        <p><strong>Pre-Processing Data</strong><br>
+            During the pre-processing phase, I focused on normalizing the features of the dataset to ensure each attribute had an equal impact on the clustering process. This normalization step is essential, as attributes like tempo and loudness have vastly different scales. After normalization, I performed KMeans clustering to identify natural groupings in the data. I also performed an initial visual inspection of the data to ensure it was ready for clustering analysis.</p>
+
+        <p><strong>Modeling</strong><br>
+            For this analysis, I applied KMeans clustering with four clusters. This choice was based on the assumption that there are four distinct musical moods or styles in the dataset. I felt KMeans was the best choice for this dataset because it’s great at grouping similar data points by minimizing the variance within each cluster. Once I ran the clustering, I used Principal Component Analysis (PCA) to reduce the data’s dimensions. This made it much easier to visualize the clusters and get a better sense of how they were spread out.</p>
+
+        <p><strong>Visualization #1: Elbow Method for Optimal Clusters</strong><br>
+            The first visualization uses the Elbow Method to determine the optimal number of clusters for KMeans. The plot shows the within-cluster sum of squares (WCSS) for different values of `k` (number of clusters). The "elbow" point, where the rate of decrease in WCSS slows down, indicates the ideal number of clusters. This method helps decide how many clusters are appropriate for our dataset based on the diminishing returns in variance explained as we increase `k`.</p>
+    
+        <p><br>
+            <img src="Project 4 Files/Visualization_1.png" alt="Elbow Method for Optimal Clusters" style="max-width: 100%; height: auto;"></p>
+    
+        <p><strong>Visualization #2: Cluster Centroids with PCA</strong><br>
+            The second visualization displays the clusters and their centroids after applying PCA for dimensionality reduction. Each cluster is represented by a unique color, with the red X marking the centroid for each cluster. The clusters represent distinct groupings of Spotify tracks based on features like energy, tempo, and danceability.</p>
+    
+        <p><br>
+            <img src="Project 4 Files/Visualization_2.png" alt="Cluster Centroids with PCA" style="max-width: 100%; height: auto;"></p>
+    
+        <p><strong>Visualization #3: Meaning of Each Cluster</strong><br>
+            The third visualization focuses on what each cluster represents in terms of musical characteristics. Based on the centroid values and the characteristics of each cluster, we can describe the following groupings:
+            <ul>
+                <li><strong>Cluster 1: Low Energy and Calm Tracks</strong> – These tracks are all about a laid-back vibe. Slower tempos, softer sounds – perfect for chilling out or using as background music. Genres like ambient or soft pop usually fit here.</li>
+                <li><strong>Cluster 2: High Energy and Upbeat Tracks</strong> – Tracks in this cluster are energetic, fast-paced, and loud. These songs are perfect for high-energy environments like workouts or parties, often found in genres like pop, rock, or dance.</li>
+                <li><strong>Cluster 3: Mixed Energy Tracks</strong> – This one's a bit all over the place, with tracks that vary in energy and tempo. These songs can work in lots of different situations, from casual listening to more diverse playlists.</li>
+                <li><strong>Cluster 4: Groove and Danceable Tracks</strong> – If you're looking for something to get you moving, this cluster's got you covered. With steady rhythms and catchy tunes, it's made for dancing or keeping the energy up. Think electronic, funk, or anything with a good groove.</li>
+            </ul>
+            
+        </p>
+
+        <p><br>
+            <img src="Project 4 Files/Visualization_3.png" alt="Cluster Centroids with PCA" style="max-width: 100%; height: auto;"></p>
+
+        <p><strong>Evaluation</strong><br>
+            The performance of the clustering model was evaluated by examining the cohesion and separation of the clusters in the PCA visualization. Although clustering is inherently subjective, the visualization showed distinct groupings of tracks with minimal overlap. The PCA reduced dimensionality effectively, helping me to visualize the clusters and identify their defining characteristics.</p>
+
+        <p><strong>Storytelling</strong><br>
+            Through the clustering analysis, I identified several key insights about Spotify tracks. The clusters reflect distinct musical moods and styles, and understanding these groups can help in curating playlists or recommending songs. It was particularly surprising to see how tracks from different genres still clustered similarly based on their energy levels and other audio features. This highlights the importance of musical elements beyond genre in shaping listeners' experiences.</p>
+
+        <p><strong>Impact</strong><br>
+            The insights from this analysis can have a significant impact on music recommendation systems. By understanding the distinct clusters of tracks, music platforms can tailor their recommendations to match users' energy preferences or listening moods. Additionally, artists could use this information to better target specific audience segments or create more targeted playlists.</p>
+
+        <div class="download-links">
+            <a href="Project 4 Files/Colin_Cranwell_Project_4.html" target="_blank">Open Project 4 HTML</a>
+            <a href="Project 4 Files/Colin_Cranwell_Project_4.ipynb" download>Download Project 4 Jupyter Notebook</a>
+            <a href="https://www.kaggle.com/datasets/geomack/spotifyclassification?resource=download" target="_blank">Spotify Dataset on Kaggle</a>
+        </div>
+    </div>
+</article>
         </section>
     </main>
     <footer>

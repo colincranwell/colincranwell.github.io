@@ -214,9 +214,14 @@
         <p><strong>Introduction to the Dataset</strong><br>
             The dataset I'm using explores various features of Spotify tracks, including attributes like energy, loudness, tempo, and danceability. This dataset, sourced from a publicly available Spotify collection, contains information about tracks from a variety of genres. The goal of this analysis is to identify distinct clusters of songs based on features like energy, tempo, and mood. By doing this, I aim to gain insights into how songs with similar characteristics can be grouped together, which could offer a better understanding of how these attributes influence music categorization.</p>
 
+        <p><strong>What is Clustering and How Does It Work?</strong></p>
+            <p>Clustering is a way to group similar data together so you can make sense of it. Basically, it’s about finding patterns in data that don’t have labels, like figuring out which songs are most similar to each other based on things like energy, tempo, and loudness.</p>
+            <p>In this analysis, I used <strong>K-Means</strong> clustering, which is one of the most common ways to do this. Here's how it works: First, you decide how many clusters you want (this is called <em>k</em>). Then, the algorithm randomly picks the starting points for the clusters. After that, it looks at all the data points (in our case, songs) and assigns each one to the closest cluster. Once all the songs are grouped, it updates the "center" of each cluster and repeats the process until the centers don’t move much anymore.</p>
+            <p>So, with Spotify tracks, K-Means helps group similar songs together, making it easier to analyze things like which songs are high-energy versus low-energy, or which ones are good for workouts versus relaxing.</p>
+
         <p><strong>Questions</strong><br>
             The primary objective of my analysis is to explore whether I can group songs based on their audio features. Can I identify distinct musical styles or mood categories from the attributes of Spotify tracks? How do attributes like energy, tempo, and loudness influence the clustering of these tracks? These are the critical questions that guided my analysis, and I aimed to understand how different features can inform the categorization of songs.</p>
-
+        
         <p><strong>Pre-Processing Data</strong><br>
             During the pre-processing phase, I focused on normalizing the features of the dataset to ensure each attribute had an equal impact on the clustering process. This normalization step is essential, as attributes like tempo and loudness have vastly different scales. After normalization, I performed KMeans clustering to identify natural groupings in the data. I also performed an initial visual inspection of the data to ensure it was ready for clustering analysis.</p>
 
